@@ -1,6 +1,4 @@
-const path = require('path');
-
 module.exports = {
-  'config': path.resolve('db.js'), // caminho para o arquivo db.js na raiz
-  'models-path': path.resolve('models', 'model.js') // caminho para o arquivo de modelos
-};
+    'config': 'db.js',
+    'models-path': 'models/model.js'
+  };
