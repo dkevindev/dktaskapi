@@ -1,4 +1,4 @@
 module.exports = {
-    'config': 'db.js',
+    'config': './db.js',
     'models-path': 'models/model.js'
   };
