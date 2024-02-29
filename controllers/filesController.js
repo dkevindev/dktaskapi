@@ -46,7 +46,7 @@ export const filesController = {
             const usuarioExistente = await Filho.findOne({ 
                 where: {filho_id: req.body.filho_id}
                });
-            const filename = `profile-${usuarioExistente.nome}.png`;
+            const filename = `profile-${usuarioExistente.nome+usuarioExistente.filho_id}.png`;
             const filePath = path.join('./', 'uploads', filename);
             await image.writeAsync(filePath);
             const imageUrl = `/${filename}`;
