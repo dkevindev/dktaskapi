@@ -173,6 +173,7 @@ const userController = {
   },
   updateProfile: async (req, res) => {
     try {
+      console.log('entrei aqui')
       const usuario = await Usuario.update(
         { profile: req.body.profile },
         {
@@ -188,6 +189,7 @@ const userController = {
   },
   updateProfileChildren: async (req, res) => {
     try {
+      console.log('entrei aqui2')
       const usuario = await Filho.update(
         { profile: req.body.profile },
         {

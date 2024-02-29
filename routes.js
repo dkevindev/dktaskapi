@@ -56,6 +56,7 @@ routes.post('/updateprofile', authMid, userController.updateProfile);
 routes.post('/updateprofile2', authMid, userController.updateProfileChildren);
 routes.post('/uploadavatar', authMid, upload.single('profile'), filesController.uploadAvatar)
 routes.post('/uploadavataruser', authMid, upload.single('profile'), filesController.uploadAvatarUser)
+routes.post('/uploadavatarchildren', authMid, upload.single('profile'), filesController.uploadAvatarChildren)
 
 
 export default routes;

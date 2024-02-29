@@ -36,5 +36,24 @@ export const filesController = {
             console.error(error);
             res.status(500).json({ error: 'Erro ao processar a imagem.' });
           }
-      }
+      },
+      uploadAvatarChildren: async (req, res) => {
+        try {
+          console.log(req.file)
+          console.log(req.body.filho_id)
+            const image = await Jimp.read(req.file.buffer);
+            await image.resize(Jimp.AUTO, 120);
+            const usuarioExistente = await Filho.findOne({ 
+                where: {filho_id: req.body.filho_id}
+               });
+            const filename = `profile-${usuarioExistente.nome}.png`;
+            const filePath = path.join('./', 'uploads', filename);
+            await image.writeAsync(filePath);
+            const imageUrl = `/${filename}`;
+            res.json({ imageUrl });
+          } catch (error) {
+            console.error(error);
+            res.status(500).json({ error: 'Erro ao processar a imagem.' });
+          }
+      },
 };
